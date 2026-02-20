@@ -6,7 +6,7 @@ import random
 from datetime import datetime
 
 # ================ توکن ربات ================
-TOKEN = "توکن_ربات_تو"  # اینجا توکن رباتتو بزار
+TOKEN = "8595594257:AAH73j8rqkvxCXdfr-HviOLphDU41f5Wqbk"
 bot = telebot.TeleBot(TOKEN)
 
 # ================ اسم فایل دیتابیس ================
