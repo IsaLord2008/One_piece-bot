@@ -1,14 +1,9 @@
-import os
-from dotenv import load_dotenv
-import telebot
+from telegram.ext import Updater, CommandHandler
 
-load_dotenv()  # فایل .env رو می‌خونه
-TOKEN = os.getenv("TOKEN")
+def start(update, context):
+    update.message.reply_text("سلام! به وان پیس رول بات خوش اومدید")
 
-bot = telebot.TeleBot(TOKEN)
-
-@bot.message_handler(commands=['start'])
-def start(msg):
-    bot.reply_to(msg, " سلام بچه ها به وانپیس رول خوش اومدید")
-
-bot.polling()
+updater = Updater("TOKEN", use_context=True)
+updater.dispatcher.add_handler(CommandHandler("start", start))
+updater.start_polling()
+updater.idle()
